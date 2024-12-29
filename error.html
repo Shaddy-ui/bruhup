@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        background: url("SAVE_20241229_244758~3.jpg") no-repeat center
+          center/cover;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 20px;
+        color: #fff;
+      }
+
+      .card {
+        position: fixed; /* Ensures the card stays in a fixed position relative to the viewport */
+        top: 50%; /* Vertically centers the card */
+        right: 200px; /* Keeps the card aligned with some space from the right edge */
+        transform: translateY(
+          -50%
+        ); /* Adjusts the vertical position to achieve perfect centering */
+        background-color: rgb(17, 21, 28);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 450px; /* Increased width */
+        height: 500px; /* Increased height */
+        text-align: center;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Evenly distribute content vertically */
+        overflow: hidden;
+      }
+
+      .head {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: white;
+        text-align: left;
+      }
+
+      h2 {
+        margin-top: 20px;
+        color: #ff6b6b;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 18px;
+      }
+
+      .content {
+        margin-top: 20px;
+        padding: 10px;
+      }
+
+      .error-message svg {
+        margin-bottom: 20px;
+      }
+
+      .error-message p {
+        font-size: 16px;
+        line-height: 30px;
+        color: #d1d4e5;
+      }
+
+      .error-message p b {
+        font-size: 18px;
+        color: #fff;
+        margin-top: 25px;
+        margin-bottom: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- Header -->
+      <div class="header">
+        <h2 class="head">Upss..</h2>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div class="error-message">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 4C12.96 4 4 12.96 4 24C4 35.04 12.96 44 24 44C35.04 44 44 35.04 44 24C44 12.96 35.04 4 24 4ZM26 34H22V30H26V34ZM26 26H22V14H26V26Z"
+              fill="#FF6B6B"
+            />
+          </svg>
+          <h2>Account Disabled Contact Support</h2>
+          <p>
+            Your account has been disabled due to security concerns. Please
+            contact our support team at +1 (808) 796-9274 for assistance. For
+            your protection, we've temporarily restricted access to your
+            account. This is a precautionary measure to ensure the safety of
+            your personal information.
+          </p>
+          <p style="margin-top: 20px"><b>Call on +1 (808) 796-9274</b></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
